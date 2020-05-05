@@ -8,12 +8,12 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <div className="App">
-      <CounterContext.Provider value={state.count}>
-        <CounterButton increment={() => dispatch({ type: "INCREMENT" })} />
+    <CounterContext.Provider value={{ state, dispatch }}>
+      <div className="App">
+        <CounterButton />
         <CounterDisplay />
-      </CounterContext.Provider>
-    </div>
+      </div>
+    </CounterContext.Provider>
   );
 }
 

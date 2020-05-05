@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { CounterContext } from "../../context";
 
 const CounterDisplay: React.FunctionComponent = () => {
-  const count = useContext(CounterContext);
-  return <p>Count: {count}</p>;
+  const { state } = useContext(CounterContext);
+  return <p>Count: {state.count}</p>;
 };
 
 export default CounterDisplay;
