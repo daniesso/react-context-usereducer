@@ -1,7 +1,13 @@
 import React from "react";
 
-const CounterButton: React.FunctionComponent = () => {
-  return <button>+</button>;
+type CounterButtonT = {
+  increment: () => void;
+};
+
+const CounterButton: React.FunctionComponent<CounterButtonT> = ({
+  increment,
+}) => {
+  return <button onClick={increment}>+</button>;
 };
 
 export default CounterButton;
